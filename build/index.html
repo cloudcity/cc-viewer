@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-transform/1.0.4/d3-transform.min.js" charset="utf-8"></script>
+
+        <style>
+
+         body {
+           font: 10px sans-serif;
+         }
+
+         .axis path,
+         .axis line {
+           fill: none;
+           stroke: #000;
+           shape-rendering: crispEdges;
+         }
+
+         .y.axis .tick line {
+           stroke: #000;
+           stroke-opacity: 0.1;
+           stroke-dasharray: 3,3;
+         }
+
+         .line {
+           fill: none;
+           stroke-width: 1.5px;
+           clip-path: url(#clip);
+         }
+
+         .brush .extent {
+           stroke: #fff;
+           fill-opacity: .125;
+           shape-rendering: crispEdges;
+         }
+
+         .legend rect {
+           fill: white;
+           stroke: #CCC;
+           opacity: 0.8;
+         }
+        </style>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script src="bundle.js"></script>
+    </body>
+</html>
