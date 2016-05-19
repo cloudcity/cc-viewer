@@ -21,7 +21,7 @@ export function receiveData(city, json) {
 
 export function fetchData(city) {
   return dispatch => {
-    return fetch(`https://api.openaq.org/v1/measurements?country=US&city=${city}&limit=1000&parameter=o3`)
+    return fetch(`https://api.openaq.org/v1/measurements?country=US&city=${city}&limit=1000`)
       .then(response => response.json())
       .then(json => dispatch(receiveData(city, json)));
   };

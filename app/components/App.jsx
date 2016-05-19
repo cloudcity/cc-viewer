@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import Chart from './Chart.jsx';
 import { requestData, fetchData } from '../actions.js';
 
-const mapStateToProps = ({data, city, updateRequired}) => {
-  return {data, city, updateRequired};
+const mapStateToProps = ({city, updateRequired}) => {
+  return {city, updateRequired};
 };
 
 class App extends React.Component {

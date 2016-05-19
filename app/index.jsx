@@ -12,7 +12,7 @@ import { fetchData } from './actions.js';
 
 const loggerMiddleware = createLogger();
 
-const initialState = {city: "Athens", data: [], updateRequired: true};
+const initialState = {city: "Asheville", data: [], updateRequired: true};
 
 let store = createStore(
   reducer,

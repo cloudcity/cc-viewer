@@ -1,12 +1,12 @@
-import { combineReducers } from 'redux';
-import { fetchData, REQUEST_DATA, RECEIVE_DATA } from './actions.js';
+import { REQUEST_DATA, RECEIVE_DATA } from './actions';
+import 'd3';
 
-export default function (state, action) {
-  switch (action.type) {
+export default function (state, {type, city, data, params}) {
+  switch (type) {
   case REQUEST_DATA:
-    return Object.assign({}, state, {city: action.city, updateRequired: true});
+    return Object.assign({}, state, {city, updateRequired: true});
   case RECEIVE_DATA:
-    return Object.assign({}, state, {data: action.data, updateRequired: false});
+    return Object.assign({}, state, {data, params, updateRequired: false});
   default:
     return state;
   }
