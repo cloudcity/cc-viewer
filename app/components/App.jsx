@@ -31,7 +31,7 @@ class App extends React.Component {
           <input defaultValue={city} ref={node => {city = node;}} />
           <button type="submit">Change City</button>
         </form>
-        <Chart data={this.props.data} />
+        <Chart />
       </div>
     )
   }

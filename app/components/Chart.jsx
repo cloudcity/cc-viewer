@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import ReactFauxDOM from 'react-faux-dom';
 import 'd3';
 import 'd3-helpers';
@@ -6,7 +7,9 @@ import 'd3-transform';
 
 const parseTime = d3.time.format.iso.parse;
 
-export default ({data}) => {
+const mapStateToProps = ({data}) => { return {data}; };
+
+const Chart = ({data}) => {
   data = data.map(function (d) {
     return {
       value: d.value,
@@ -139,3 +142,5 @@ export default ({data}) => {
 
   return svgNode.toReact();
 }
+
+export default connect(mapStateToProps)(Chart);
