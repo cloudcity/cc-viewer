@@ -45,6 +45,7 @@
     "react-dom": "^0.14.8",
     "react-faux-dom": "^2.5.0",
     "react-redux": "^4.4.5",
+    "react-select": "^1.0.0-beta13",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.1.0"

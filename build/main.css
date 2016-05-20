@@ -1,18 +1,37 @@
 body {
-  font: 10px sans-serif;
+  font-size: 12px;
+  font-family: "Open Sans", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  background: #382f49;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+#container {
+  width: 960px;
+  margin: 20px auto;
+}
+
+h1 {
+  margin-bottom: 1em;
 }
 
 .axis path,
 .axis line {
   fill: none;
-  stroke: #000;
+  stroke: #807493;
   shape-rendering: crispEdges;
 }
 
+svg text {
+  fill: #807493;
+}
+
 .y.axis .tick line {
-  stroke: #000;
-  stroke-opacity: 0.1;
-  stroke-dasharray: 3,3;
+  stroke: #807493;
+  stroke-opacity: 0.5;
+  stroke-dasharray: 3, 3;
 }
 
 .line {
@@ -22,7 +41,7 @@ body {
 }
 
 .brush .extent {
-  stroke: #fff;
+  stroke: none;
   fill-opacity: .125;
   shape-rendering: crispEdges;
 }
@@ -31,4 +50,64 @@ body {
   fill: white;
   stroke: #CCC;
   opacity: 0.8;
+}
+
+form label {
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+form label, form button {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 80%;
+  color: #fff;
+}
+
+form input {
+  color: #444;
+}
+
+form input, .select-style {
+  width: 150px;
+}
+
+form button {
+  position: relative;
+  top: -1px;
+  background: #e28b41;
+  border: 0;
+}
+
+form input, form button {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 8px;
+  margin-right: 10px;
+  height: 30px;
+}
+
+.select-style {
+  border: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #fafafa url("/img/arrowdown.gif") no-repeat 95% 50%;
+}
+
+.select-style select {
+  border-radius: 0;
+  padding: 9px 8px;
+  height: 30px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+}
+
+.select-style select:focus {
+  outline: none;
 }

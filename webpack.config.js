@@ -1,6 +1,5 @@
 /* jshint esversion: 6 */
 
-const merge   = require('webpack-merge');
 const path    = require('path');
 const webpack = require('webpack');
 const NpmInstallPlugin = require('npm-install-webpack-plugin');
@@ -26,13 +25,22 @@ const common = {
   output: {
     path: PATHS.build,
     filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        loaders: ['babel?cacheDirectory'],
+        include: PATHS.app
+      }
+    ]
   }
 };
 
 // Default configuration. We will return this if
 // Webpack is called outside of npm.
 if (TARGET === 'start' || !TARGET) {
-  module.exports = merge(common, {
+  module.exports = Object.assign({}, common, {
     devtool: 'eval-source-map',
     devServer: {
       contentBase: PATHS.build,
@@ -52,24 +60,10 @@ if (TARGET === 'start' || !TARGET) {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new NpmInstallPlugin({ save: true })
-    ],
-    module: {
-      loaders: [
-        {
-          test: /\.css$/,
-          loaders: ['style', 'css'],
-          include: PATHS.app
-        },
-        {
-          test: /\.jsx?$/,
-          loaders: ['babel?cacheDirectory'],
-          include: PATHS.app
-        }
-      ]
-    }
+    ]
   });
 }
 
 if (TARGET === 'build') {
-  module.exports = merge(common, {});
+  module.exports = Object.assign({}, common, {});
 }
